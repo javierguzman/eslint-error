@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+      "outDir": "./dist/",        // path to output directory
+      "sourceMap": true,          // allow sourcemap support
+      "strictNullChecks": true,   // enable strict null checks as a best practice
+      "module": "esnext",         // specify module code generation
+      "jsx": "react",             // use typescript to transpile jsx to js
+      "target": "es5",            // specify ECMAScript target version
+      "allowJs": true,             // allow a partial TypeScript and JavaScript codebase
+      "baseUrl": ".",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "paths": {
+        "@Header": ["./src/Features/Header"],
+        "@Common/*": ["./../common/*"],
+        "@Images/*": ["./../common/assets/images/*"]
+    }
+  },
+  "include" : ["src", "./../common"],
+  "exclude": ["node_modules", "dist", "config", ".vscode"]
+}

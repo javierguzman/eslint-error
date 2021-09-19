@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "module": "esnext", //only in TS es6 matters: https://github.com/Microsoft/vscode/issues/24715
+      "target": "es2020",
+      "baseUrl": ".",
+      "paths": {
+        "@Header": ["./src/features/Header"],
+        "@Common/*": ["./../common/*"],
+        "@Images/*": ["./../common/assets/images/*"]
+    }
+  },
+  "include" : ["src/**/*"],
+  "exclude": ["node_modules", "dist", "config", ".vscode"]
+}

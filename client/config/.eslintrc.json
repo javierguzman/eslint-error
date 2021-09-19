@@ -1,0 +1,114 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "ignorePatterns": ["*.test.js", "*.story.js"],
+    "parser":  "@typescript-eslint/parser",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "extends": [
+            "plugin:react/recommended",
+            "plugin:@typescript-eslint/eslint-recommended",
+            "plugin:@typescript-eslint/recommended"
+        ],
+        "plugins": ["@typescript-eslint"],
+        "rules":{
+          "import/prefer-default-export": "off",
+          "import/extensions": [
+            // "missing file extension "ts" for module_x."
+            "error", // https://github.com/benmosher/eslint-plugin-import/issues/1615
+            "ignorePackages",
+            {
+              "js": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+          ],
+          "no-else-return": "off",
+          "@typescript-eslint/explicit-function-return-type": [
+            "warn", {
+              "allowExpressions": true
+            }
+          ],
+          "@typescript-eslint/no-explicit-any": "off",
+          "react/prop-types": "off",
+          "@typescript-eslint/no-use-before-define": "off",
+          "lines-between-class-members": "off",
+          "no-underscore-dangle": "off",
+          "no-shadow": "off",
+          "@typescript-eslint/no-shadow": ["error"],
+          "react/require-default-props": "off"
+        }
+      }
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier",
+        "jsx-a11y",
+        "react-hooks"
+    ],
+    "rules": {
+        "prettier/prettier": ["error", {
+            "printWidth": 100,
+            "singleQuote": true,
+            "tabWidth": 2,
+            "trailingComma": "none",
+            "arrowParens": "avoid"
+        }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": [
+                ".storybook/**",
+                "config/**",
+                "**/*.story.js",
+                "**/*.test.js"
+              ]
+            }
+          ],
+          "react-hooks/rules-of-hooks": "error",
+          "react-hooks/exhaustive-deps": "warn",
+          "react/jsx-props-no-spreading": "off",
+          "no-use-before-define": "off",
+          "import/extensions": [
+            // "missing file extension "ts" for module_x."
+            "error", // https://github.com/benmosher/eslint-plugin-import/issues/1615
+            "ignorePackages",
+            {
+              "js": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+          ],
+          "arrow-body-style": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node" : {},// due to https://github.com/benmosher/eslint-plugin-import/issues/1396
+            "webpack": {
+                "config" : "config/webpack-prod.js",
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        },
+        "import/ignore": ["*.png", "*.jpg"] // import images with alias @Images throws ESLint error
+    }
+}
