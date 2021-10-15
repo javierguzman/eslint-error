@@ -116,6 +116,6 @@
                 "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         },
-        "import/ignore": ["*.png", "*.jpg"] //import images with alias @Images throws ESLint error
+        "import/ignore": ["\\.png$", "\\.jpg$"] // import images with alias @Images throws ESLint error
     }
 }
